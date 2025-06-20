@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- saved from url=(0126)file:///E:/xiaohongshu/%E5%B8%B8%E7%94%A8%E8%AF%9D%E6%9C%AF/%E5%B8%B8%E7%94%A8%E8%AF%9D%E6%9C%AF%20-%20%E6%8B%B7%E8%B4%9D.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用话术</title>
+    <style>
+        /* 基本样式设置 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+        
+        /* 左侧分类导航样式 */
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-item {
+            padding: 10px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .category-item:hover {
+            background-color: #e9ecef;
+        }
+        
+        .category-item.active {
+            background-color: #4a90e2;
+            color: white;
+        }
+        
+        /* 主内容区域样式 */
+        .main-content {
+            flex: 1;
+        }
+        
+        .phrase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        /* 话术卡片样式 */
+        .phrase-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .phrase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .phrase-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #D10000;
+            font-size: 16px;
+        }
+        
+        .phrase-content {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+            white-space: pre-line;
+            margin-bottom: 10px;
+            word-wrap: break-word; /* 添加此属性以强制长链接换行 */
+        }
+        
+        .copy-success {
+            background-color: #e8f5e9;
+            border: 1px solid #4CAF50;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width : 1466px ){
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="sidebar">
+        <h3>类目</h3>
+          <ul class="category-list" id="category-list">
+              <li class="category-item" data-category="welcome">英文常用回复</li>
+              <li class="category-item" data-category="阿拉伯常用回复">阿拉伯常用回复</li>
+              <li class="category-item" data-category="英语文案">英语文案</li>
+              <li class="category-item" data-category="阿拉伯文案">阿拉伯文案</li>
+          </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="phrase-grid" id="phrase-container"><div class="phrase-card">
+ 
+    <script>
+        // 话术数据
+        // 每个分类对应一个数组，数组中的每个对象包含话术的标题和内容
+        const phrases = {
+            // 此处不可更改
+            welcome: [
+                {
+                    title: "欢迎语 + 产品介绍",
+                    content: "Hello! Welcome to Zhongshan Qinglang Technology Co., Ltd.\nWe specialize in blenders, air fryers, and other kitchen appliances.\nLet me know what you’re looking for. 😊"
+                },
+                {
+                    title: "报价回应",
+                    content: "Sure! Could you please tell me the model and quantity you’re interested in? I’ll give you the best price."
+                },
+                {
+                    title: "MOQ / 最小起订量说明",
+                    content: "For factory price, we usually require full container orders.\nSmall quantity is also possible for some models — let me check for you."
+                },
+                {
+                    title: "发送产品资料",
+                    content: "Please check this product catalog. Let me know which models you like"
+                },
+	 {
+                    title: "确认收款/准备发货",
+                    content: "Payment received, thank you!\nWe will arrange production and update you with shipping details soon."
+                },
+	 {
+                    title: "支持OEM贴牌",
+                    content: "Yes, we support OEM. You can send us your logo, and we can customize the packaging or product for you."
+                }
+
+            ],
+
+            阿拉伯常用回复: [
+  	{
+   	 "title": "欢迎语 + 产品介绍",
+    	"content": "مرحبًا! أهلاً بك في شركة Zhongshan Qinglang Technology Co., Ltd.\nنحن متخصصون في الخلاطات، القلايات الهوائية، وغيرها من أجهزة المطبخ.\nأخبرني بما تبحث عنه 😊"
+ 	 },
+ 	 {
+  	  "title": "报价回应",
+   	 "content": "بكل تأكيد! هل يمكنك أن تخبرني بالموديل والكمية التي تهتم بها؟ سأعطيك أفضل سعر ممكن."
+ 	 },
+ 	 {
+   	 "title": "MOQ / 最小起订量说明",
+  	  "content": "للحصول على سعر المصنع، نطلب عادةً طلبات بحاوية كاملة.\nلكن بعض الموديلات متاحة بكميات أقل — دعني أتحقق لك."
+ 	 },
+ 	 {
+   	 "title": "发送产品资料",
+   	 "content": "يرجى مراجعة كتالوج المنتجات هذا، وأخبرني بالموديلات التي أعجبتك."
+ 	 },
+ 	 {
+  	  "title": "确认收款/准备发货",
+   	 "content": "تم استلام الدفع، شكرًا لك!\nسنقوم بترتيب الإنتاج قريبًا وسنوافيك بتفاصيل الشحن."
+ 	 },
+  	{
+    	"title": "支持OEM贴牌",
+   	 "content": "نعم، نحن ندعم خدمة OEM.\nيمكنك إرسال شعارك وسنقوم بتخصيص التغليف أو المنتج لك."
+ 	 }
+
+            ],
+	 英语文案: [
+  	{
+   	 "title": "WhatsApp 群发",
+    	"content": "Salam Alaikum 🙏  \nAre you interested in reselling or distributing home appliances?  \nWe are a factory from China 🇨🇳 supplying quality:\n🍽️ Blenders | 🍟 Air Fryers | 🔥 Ceramic\nCookers\n\nMOQ friendly. OEM available.  \nIf you’re looking for good profit products, I’m happy to support.\n\nReply “Hi” and I’ll send product list & video demo."
+ 	 },
+ 	 {
+  	  "title": "主打批发代理合作（适合 Facebook 群或评论私信）",
+   	 "content": "Hi! I'm looking for agents or wholesale partners for kitchen appliances.  \nWe are the manufacturer — best price guaranteed. \nIf you’re interested in distribution or selling in your country, I’ll support you step by step.\nLet me know if you’d like the product catalog. 😊"
+ 	 },
+ 	 {
+   	 "title": "Blender 搅拌机文案",
+  	  "content": "High-quality electric blenders - direct from factory 🇨🇳\nBest wholesale price guaranteed \nn 1-cup & 2-cup available\n Powerful motor, fast blending\n OEM/Logo support\nnMessage me for full catalog and best offer\nWhatsApp:+8619164641360"
+ 	 },
+ 	 {
+   	 "title": "Air Fryer 空气炸锅文案",
+   	 "content": "Hot-selling air fryers\nFactory direct — top quality & competitive price\n\n Sizes: 3.5L / 5.5L / 8L\n Easy to use, energy-saving\n Ideal for resale in shops or online\n\nDM me for details, photos, and price\nWhatsApp:+8619164641360 "
+ 	 },
+ 	 {
+  	  "title": "多品类小家电组合文案",
+   	 "content": "Looking for kitchen appliances to resell?\nWe're a factory in China 🇨🇳 supplying:\n Blenders\n Air Fryers\n Ceramic Stoves\n\nSupport OEM & bulk order\nMOQ-friendly for small businesses\n\nMessage now for catalog & prices\nWhatsApp:+8619164641360 "
+ 	 },
+  	
+            ],
+	阿拉伯文案: [
+
+  	{
+  	  "title": "WhatsApp 群发",
+   	 "content": "السلام عليكم ورحمة الله وبركاته 🙏\nهل أنت مهتم بإعادة بيع أو توزيع أجهزة المطبخ؟\nنحن مصنع صيني 🇨🇳 متخصص في تصنيع:\n🍽️ خلاطات كهربائية | 🍟 قلايات هوائية | 🔥 مواقد سيراميك\n\nندعم الكميات الصغيرة والتخصيص (OEM)\nإذا كنت تبحث عن منتجات مربحة، نحن هنا لدعمك بكل سرور\n\nراسلني على WhatsApp: +8619164641360"
+ 	 },
+ 	 {
+  	  "title": "主打批发代理合作（适合 Facebook 群或评论私信）",
+  	  "content": "مرحبًا أصدقائي 👋\nأبحث عن وكلاء أو شركاء في التوزيع بالجملة لأجهزة المطبخ\nنحن المصنع الأصلي — أفضل سعر مضمون بإذن الله\nإذا كنت مهتمًا بالبيع في بلدك، سأدعمك خطوة بخطوة\nأخبرني فقط إذا كنت تريد الكتالوج وسأرسله فورًا 😊\n\nWhatsApp: +8619164641360"
+ 	 },
+  	{
+   	 "title": "Blender 搅拌机文案",
+  	  "content": "خلاطات كهربائية عالية الجودة — مباشرة من المصنع 🇨🇳\nأفضل أسعار الجملة مضمونة \nمتوفر 1 كوب و2 كوب\nمحرك قوي ونتائج خلط سريعة \nدعم التخصيص والطباعة على الشعار (OEM)\n\nراسلني الآن للحصول على الكتالوج الكامل وأفضل عرض\nWhatsApp: +8619164641360"
+ 	 },
+  	{
+  	  "title": "Air Fryer 空气炸锅文案",
+ 	   "content": "قلايات هوائية عالية الطلب حاليًا \nمباشرة من المصنع — جودة ممتازة وسعر منافس \n\n الأحجام المتوفرة: 3.5 لتر / 5.5 لتر / 8 لتر\nسهل الاستخدام ويوفر في الكهرباء \nمناسب للبيع في المتاجر أو عبر الإنترنت \n\nراسلني للتفاصيل والصور والسعر\nWhatsApp: +8619164641360"
+  	},
+ 	 {
+  	  "title": "多品类小家电组合文案",
+ 	   "content": "هل تبحث عن أجهزة مطبخ لإعادة البيع؟\nنحن مصنع صيني 🇨🇳 نوفر لك:\n خلاطات كهربائية\n قلايات هوائية\n مواقد سيراميك\n\nندعم التخصيص وطلبات الجملة (OEM)\nونقدم كميات مرنة تناسب التجار المبتدئين\n\nراسلني الآن للحصول على الكتالوج والأسعار \nWhatsApp: +8619164641360"
+	  }
+            ]
+
+        };
+
+        // 当前显示的类别
+        let currentCategory = "welcome";
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPhrases(currentCategory); // 渲染初始话术
+            setupEventListeners(); // 设置事件监听器
+        });
+
+        // 设置事件监听器
+        function setupEventListeners() {
+            // 分类切换
+            const categoryItems = document.querySelectorAll('.category-item');
+            categoryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 移除所有分类的active类
+                    categoryItems.forEach(i => i.classList.remove('active'));
+                    // 为当前点击的分类添加active类
+                    this.classList.add('active');
+                    // 更新当前显示的类别
+                    currentCategory = this.dataset.category;
+                    // 重新渲染话术
+                    renderPhrases(currentCategory);
+                });
+            });
+        }
+
+        // 渲染话术卡片
+        function renderPhrases(category) {
+            const container = document.getElementById('phrase-container');
+            container.innerHTML = ''; // 清空容器
+            
+            // 遍历当前分类的话术
+            phrases[category].forEach(phrase => {
+                // 创建话术卡片
+                const card = document.createElement('div');
+                card.className = 'phrase-card';
+                
+                // 设置卡片内容
+                card.innerHTML = `
+                    <div class="phrase-title">${phrase.title}</div>
+                    <div class="phrase-content">${phrase.content}</div>
+                `;
+                
+                // 为卡片添加点击事件
+                card.addEventListener('click', function() {
+                    copyToClipboard(phrase.content, card);
+                });
+                
+                // 将卡片添加到容器
+                container.appendChild(card);
+            });
+        }
+
+        // 复制到剪贴板
+        function copyToClipboard(text, element) {
+            try {
+                // 使用现代API
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showCopySuccess(element);
+                    }, (err) => {
+                        console.error('Modern API failed:', err);
+                        fallbackCopyText(text, element);
+                    });
+                } else {
+                    fallbackCopyText(text, element);
+                }
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        }
+
+        // 兼容性回退方法
+        function fallbackCopyText(text, element) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess(element);
+                } else {
+                    console.error('Fallback copy failed');
+                }
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+            } finally {
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // 显示复制成功提示
+        function showCopySuccess(element) {
+            element.classList.add('copy-success'); // 添加成功提示样式
+            
+            // 1秒后移除成功提示样式
+            setTimeout(() => {
+                element.classList.remove('copy-success');
+            }, 1000);
+        }
+    </script>
+
+</body></html>
